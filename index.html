@@ -2,46 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Personal Profile Project</title>
+    <title>Coding Portfolio Project of Jeffery Ray Russell</title>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
   </head>
   <body>
     <main>
+    <header>
+      <h1>
+        My Professional Portfolio - Jeffery Ray Russell
+      </h1>
+      <p></p>
+    </header>
+
+    <nav>
+      <ul>
+        <li>Portolio Projects</li>
+        <li>About Me (coming soon!)</li>
+        <li><a href="http://twitter.com/jefferyrayruss2" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/jefferyrayrussell" target="_blank">Github</a></li>
+        <li><a href="http://facebook.com/jeff.russell.5" target="_blank">Facebook</a></li>
+      </ul>
+    </nav>
+
+    <section id="portfolio-projects">
+      <article class="template" data-category="category">
+
         <header>
-          <h1>
-            My Personal Profile - Jeffery Ray Russell
-          </h1>
-          <p></p>
+REWORK THE HEADER SECTION
+          <h1>Project Title</h1>
+          <div class="project-details">
+            By <address><a href="">Author Name</a></address>
+            published <time pubdate datetime="2000-01-01">Publish Time</time>
+          </div>
+
         </header>
-        <nav>
-          <ul>
-            <li>Projects</li>
-            <li>About (coming soon!)</li>
-            <li><a href="http://twitter.com/brookr" target="_blank">Twitter</a></li>
-            <li><a href="http://github.com/brookr" target="_blank">Github</a></li>
-          </ul>
-        </nav>
-        
-        <section id="articles">
-          <article class="template" data-category="cat">
-            <header>
-              <h1>Title</h1>
-              <div class="byline">
-                By <address><a href="">Author Name</a></address>
-                published <time pubdate datetime="2000-01-01">Publish Time</time>
-              </div>
-            </header>
-            <section class="article-body"></section>
-          </article>
-        </section>
-      </div>
-    </main>
+        <section class="project-summary"></section>
+
+      </article>
+    </section>
+  </div>
+
+</main>
     <footer>
     </footer>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-      <script src="scripts/blogArticles.js"></script>
-      <script src="scripts/article.js"></script
+      <script src="scripts/portfolioProjects.js"></script>
+      <script src="scripts/app.js"></script
   </body>
 </html>
