@@ -1,38 +1,27 @@
-var articles = [];
+var portfolioItems = [];
 
-function Article (opts) {
-  // TO-DO: Use the js object passed in to complete this contructor function:
-  // Save ALL the properties of `opts` into `this`.
-  this.author = opts.author;
-  this.title = opts.title;
-  this.category = opts.category;
-  this.authorUrl = opts.authorUrl;
-  this.publishedOn = opts.publishedOn;
-  this.body = opts.body;
+function PortfolioItem (opts) {
+  this.projectTitle = opts.projectTitle;
+  this.projectCategory = opts.projectCategory;
+  this.projectRepositoryUrl = opts.projectRepositoryUrl;
+  this.projectCompletedOn = opts.projectCompletedOn;
+  this.projectReadMe = opts.projectReadMe;
 }
 
-Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
+Portfolio.prototype.toHtml = function() {
+  var $newPortfolioItem = $('portfolioItem.template').clone();
 
-  $newArticle.attr('data-category', this.category);
-
-  // TO-DO: Use jQuery to fill in the template with properties
-  // from this particular Article instance. We need to fill in:
-  // the author name* and url*, the article title and body, and the
-  // publication date.
-  $newArticle.find('a').html(this.author);
-  $newArticle.find('a').attr('href', this.authorUrl);
-  $newArticle.find('h1').html(this.title);
-  $newArticle.find('.article-body').html(this.body);
+  $newPortfolioItem.attr('data-category', this.category);
+  $newPortfolioItem.find('a').html(this.author);
+  $newPortfolioItem.find('a').attr('href', this.authorUrl);
+  $newPortfolioItem.find('h1').html(this.title);
+  $newPortfolioItem.find('.article-body').html(this.body);
   // Include the publication date as a 'title' attribute to show on hover:
   $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
 
-  // Display the date as a relative number of "days ago":
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000) + ' days ago');
-
   $newArticle.append('<hr>');
 
-  // TO-DO: This cloned article is no longer a template, so we should remove that class...
+  //This cloned article is no longer a template, so we should remove that class...
   $newArticle.removeClass('template');
   return $newArticle;
 };
