@@ -2,6 +2,7 @@ var portfolioItems = [];
 
 function PortfolioItem (opts) {
   this.title = opts.title;
+  this.collaborators = opts.colaborators;
   this.category = opts.category;
   this.repositoryUrl = opts.repositoryUrl;
   this.date = opts.date;
