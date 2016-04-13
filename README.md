@@ -1,6 +1,5 @@
 # portfolio
 
-# Portfolio
 Your professional online presence
 The portfolio site that you create will highlight your projects and your interests, and showcase your skills to potential employers or clients.
 
