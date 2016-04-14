@@ -24,26 +24,27 @@
   float: right;
 }
 
-.main-nav {
-  padding: 0.1em;
-}
-
-.main-nav ul {
-  display: none;
-  padding: 0;
-  list-style: none;
-  clear: both;
-}
-
-.main-nav:hover ul {
+nav {
   display: block;
+  position: relative;
+  margin: 5px auto;
+  background-color: #407F7F;
+
+}
+nav ul{
+  text-align: center;
+  margin-left: -40px;
+}
+nav li{
+  display: inline-block;
+  text-align: center;
+  margin: 5 auto;
+  padding: 5px 5px;
+  font-family:
 }
 
-.main-nav li {
-  margin-right: .4em;
-  font-size: 1.5em;
-  padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
+article {
+  text-align: center;
 }
 
 @media only screen and (min-width: 700px) {

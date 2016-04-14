@@ -8,6 +8,10 @@ hr {
   width: 80%;
 }
 
+h4 {
+  text-align: center;
+}
+
 img {
   max-width: 100%;
 }
