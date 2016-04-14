@@ -1,4 +1,4 @@
-var projectItems = [];
+var projectDataItems = [];
 
 function ProjectItem (object){
   this.name = object.name;
@@ -20,15 +20,31 @@ ProjectItem.prototype.toHtml = function() {
   $newProjectItem.find('.summary').html(this.summary);
   $newProjectItem.find('a').attr('href', this.repoUrl);
   $newProjectItem.find('.summary').html(this.summary);
-  //$newProjectItem.append('<hr>');
+  $newProjectItem.append('<a>');
   $newProjectItem.removeClass('template');
   return $newProjectItem;
 };
 
 projectData.forEach(function(ele) {
-  projectItems.push(new ProjectItem(ele));
+  projectDataItems.push(new ProjectItem(ele));
 });
 
-projectItems.forEach(function(a){
-  $('#projectItems').append(a.toHtml());
+projectDataItems.forEach(function(a){
+  $('#projects').append(a.toHtml());
+});
+
+var infoRendered = {};
+
+infoRendered.handleNavigationBar = function(){
+  $('.navigation-bar').on('click', '.page', function(){
+    $('.page-content').hide();
+    $('#' + $(this).data('content')).show();
+    console.log('#' + $(this).data('content'));
+  });
+
+  $('.navigation-bar .page:first').click();
+};
+
+$(document).ready(function(){
+  infoRendered.handleNavigationBar();
 });
