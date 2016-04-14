@@ -21,6 +21,7 @@ ProjectItem.prototype.toHtml = function() {
   $newProjectItem.find('a').attr('href', this.repoUrl);
   $newProjectItem.find('.summary').html(this.summary);
   $newProjectItem.append('<a href="' + this.repoUrl + '" class="look-here" target="_blank">Look Here!</a>');
+
   $newProjectItem.removeClass('template');
   return $newProjectItem;
 };
@@ -36,7 +37,9 @@ projectDataItems.forEach(function(a){
 var infoRendered = {};
 
 infoRendered.handleNavigationBar = function(){
+  console.log('handleNavigationBar1');
   $('.navigation-bar').on('click', '.page-tab', function(){
+    console.log('handleNavigationBar2');
     $('.page-content').hide();
     $('#' + $(this).data('content')).show();
     console.log('#' + $(this).data('content'));
