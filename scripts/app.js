@@ -1,37 +1,50 @@
-var portfolioItems = [];
+var projectDataItems = [];
 
-function PortfolioItem (opts) {
-  this.title = opts.title;
-  this.collaborators = opts.colaborators;
-  this.category = opts.category;
-  this.repositoryUrl = opts.repositoryUrl;
-  this.date = opts.date;
-  this.readMe = opts.readMe;
-}
-
-Portfolio.prototype.toHtml = function() {
-  var $newPortfolioItem = $('portfolioItem.template').clone();
-
-//Code Below Needs Reworking
-  $newPortfolioItem.find('h1').html(this.title);
-  $newPortfolioItem.attr('category', this.category);
-  $newPortfolioItem.find('a').attr('href', this.repositoryUrl);
-  $newPortfolioItem.find('.readme').html(this.body);
-
-  $newPortfolioItem.find('time[pubdate]');
-
-  $newPortfolioItem.append('<hr>');
-
-  //This cloned article is no longer a template, so we should remove that class...
-  $newPortfolioItem.removeClass('template');
-  return $newPortfolioItem;
+function ProjectItem (object){
+  this.name = object.name;
+  this.id = object.id;
+  this.class = object.class;
+  this.creators = object.creators;
+  this.date = object.date;
+  this.repoUrl = object.repoUrl;
+  this.summary = object.summary;
 };
 
+ProjectItem.prototype.toHtml = function() {
+  var $newProjectItem = $('article.template').clone();
+  $newProjectItem.find('.name').html(this.name);
+  $newProjectItem.attr('id', this.id);
+  $newProjectItem.attr('class', this.class);
+  $newProjectItem.find('.creators').html(this.creators);
+  $newProjectItem.find('.date').html(this.date);
+  $newProjectItem.find('.summary').html(this.summary);
+  $newProjectItem.find('a').attr('href', this.repoUrl);
+  $newProjectItem.find('.summary').html(this.summary);
+  $newProjectItem.append('<a>');
+  $newProjectItem.removeClass('template');
+  return $newProjectItem;
+};
 
-rawData.forEach(function(ele) {
-  portfolioItems.push(new Portfolio(ele));
+projectData.forEach(function(ele) {
+  projectDataItems.push(new ProjectItem(ele));
 });
 
-portfolioItems.forEach(function(a){
-  $('#articles').append(a.toHtml());
+projectDataItems.forEach(function(a){
+  $('#projects').append(a.toHtml());
+});
+
+var infoRendered = {};
+
+infoRendered.handleNavigationBar = function(){
+  $('.navigation-bar').on('click', '.page', function(){
+    $('.page-content').hide();
+    $('#' + $(this).data('content')).show();
+    console.log('#' + $(this).data('content'));
+  });
+
+  $('.navigation-bar .page:first').click();
+};
+
+$(document).ready(function(){
+  infoRendered.handleNavigationBar();
 });
