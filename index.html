@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Coding Portfolio Project of Jeffery Ray Russell</title>
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/modules.css">
+      <meta charset="UTF-8">
+      <title>Jeffery Ray Russell: Professional Portfolio</title>
+      <link rel="stylesheet" href="styles/normalize.css">
+      <link rel="stylesheet" href="styles/base.css">
+      <link rel="stylesheet" href="styles/layout.css">
+      <link rel="stylesheet" href="styles/modules.css">
+      <link rel="stylesheet" href="styles/state.css">
+      <link rel="stylesheet" href="styles/theme.css">
+      <link rel="stylesheet" href="styles/icon.css">
   </head>
   <body>
     <main>
-    <header>
-      <h1>
-        My Professional Portfolio - Jeffery Ray Russell
-      </h1>
-      <p></p>
-    </header>
-
-    <nav>
-      <ul>
-        <li>Portolio Projects</li>
-        <li>About Me (coming soon!)</li>
-        <li><a href="http://twitter.com/jefferyrayruss2" target="_blank">Twitter</a></li>
-        <li><a href="https://github.com/jefferyrayrussell" target="_blank">Github</a></li>
-        <li><a href="http://facebook.com/jeff.russell.5" target="_blank">Facebook</a></li>
-      </ul>
-    </nav>
-
-    <section id="portfolio-projects">
-      <article class="template" data-category="category">
-
+      <header class="portfolio-header">
+        <h2>Jeffery Ray Russell: Professional Portfolio</h2>
+      </header>
+      <nav class="portfolio-navigation-bar">
+        <ul>
+          <li class="page-tab" data-content="portfolio-resume"><a href="#">Portfolio Resume</a></li>
+          <li class="page-tab" data-content="portfolio-projects"><a href="#">Portfolio Projects</a></li>
+          <li class="links-tab"><a href="https://github.com/jefferyrayrussell" target="_blank">Github</a></li>
+          <li class="links-tab"><a href="https://linkedin.com/jefferyrayrussell" target="_blank">Linkedin</a></li>
+          <li class="links-tab"><a href="http://twitter.com/jefferyrayrussell" target="_blank">Twitter</a></li>
+        </ul>
+      </nav>
+      <section id="resume" class="page-content">
         <header>
-REWORK THE HEADER SECTION
-          <h1>Project Title</h1>
-          <div class="project-details">
-            By <address><a href="">Author Name</a></address>
-            published <time pubdate datetime="2000-01-01">Publish Time</time>
-          </div>
-
+          <h4>Jeffery Ray Russell: Resume</h4>
         </header>
-        <section class="project-summary"></section>
-
-      </article>
-    </section>
-  </div>
-
-</main>
+          <p>I love the work of web development.  It encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.</p>
+      </section>
+      <section id="projects" class="page-content">
+        <header>
+          <h4>Jeffery Ray Russell: Projects</h4>
+        </header>
+        <article class="projects-template">
+          <h4 class="project-title"><a href="">Project Title</a></h4>
+          <p class="project-collaborators">Created by:</p>
+          <p class="project-date">Completed on:</p>
+          <p class="project-summary">Project summary:</p>
+        </article>
+      </section>
+    </main>
     <footer>
     </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-      <script src="scripts/portfolioProjects.js"></script>
-      <script src="scripts/app.js"></script
+      <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script src="scripts/projects.js"></script>
+      <script src="scripts/resume.js"></script>
+      <script src="scripts/app.js"></script>
   </body>
 </html>
