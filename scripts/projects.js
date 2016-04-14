@@ -1,23 +1,29 @@
-var rawData = [
+var projectData = [
   {
-    title:          'Pizza Odyssey',
-    category:       'Management Tool',
-    repositoryUrl:  'http://www.github',
-    date:           '2016-03-25',
-    readMe:         '<p>Blah Blah Blah</p>'
+    name:'Pizza Odyssey',
+    id:'pizza-odyssey',
+    class:'code-project-1',
+    creators:'Jeff Russell',
+    date:'March, 2016',
+    repoUrl:'http://www.github',
+    summary:'<p>Blah</p>'
   },
   {
-    title:          'Bus Mall',
-    category:       'Marketing Tool',
-    repositoryUrl:   'http://www.github',
-    date:            '2016-04-01',
-    readMe:          '<p>Blah Blah Blah</p>'
+    name:'Bus Mall',
+    id:'bus-mall',
+    class:'code-project-2',
+    creators:'Jeff Russell',
+    date:'April, 2016',
+    repoUrl:'http://www.github',
+    summary:'<p>Blah Blah</p>'
   },
   {
-    title:          'Budget Buddy',
-    category:       'Personal Finance Tool',
-    repositoryUrl:   'http://www.github',
-    date:            '2016-04-08',
-    readMe:          '<p>Blah Blah Blah</p>'
+    name:'Budget Buddy',
+    id:'budget-buddy',
+    class:'code-project-3',
+    creators:'Jeff, Stephanie, Vic, Danny',
+    date:'April, 2016',
+    repoUrl:'http://www.github',
+    summary:'<p>Blah Blah Blah</p>'
   },
 ];
