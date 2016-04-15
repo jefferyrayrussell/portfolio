@@ -7,6 +7,7 @@ function ProjectItem (object){
   this.creators = object.creators;
   this.date = object.date;
   this.repoUrl = object.repoUrl;
+  this.location = object.location;
   this.summary = object.summary;
 };
 
@@ -16,23 +17,6 @@ ProjectItem.prototype.toHtml = function() {
   return template(this);
 };
 
-/*
-ProjectItem.prototype.toHtml = function() {
-  var $newProjectItem = $('article.template').clone();
-  $newProjectItem.find('.name').html(this.name);
-  $newProjectItem.attr('id', this.id);
-  $newProjectItem.attr('class', this.class);
-  $newProjectItem.find('.creators').html(this.creators);
-  $newProjectItem.find('.date').html(this.date);
-  $newProjectItem.find('.summary').html(this.summary);
-  $newProjectItem.find('a').attr('href', this.repoUrl);
-  $newProjectItem.find('.summary').html(this.summary);
-  $newProjectItem.append('<a href="' + this.repoUrl + '" class="look-here" target="_blank">Look Here!</a>');
-
-  $newProjectItem.removeClass('template');
-  return $newProjectItem;
-};
-*/
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
 });

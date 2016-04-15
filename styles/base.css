@@ -1,6 +1,11 @@
 main {
   margin: auto;
   width: 80%;
+  text-align: left;
+}
+
+p {
+  text-align: left;
 }
 
 hr {
@@ -8,7 +13,7 @@ hr {
   width: 80%;
 }
 
-h4 {
+h2 {
   text-align: center;
 }
 
@@ -18,12 +23,12 @@ img {
 
 
 a, a:link, a:active {
-  color: #0D4D4D;
+  color: #003333;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: #003333;
+  color: #0D4D4D;
 }
 
 a:visited {
