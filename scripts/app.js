@@ -11,6 +11,11 @@ function ProjectItem (object){
 };
 
 ProjectItem.prototype.toHtml = function() {
+  var $source = $('#project-template').html();
+  var template = Handlebars.compile($source);
+
+/*
+ProjectItem.prototype.toHtml = function() {
   var $newProjectItem = $('article.template').clone();
   $newProjectItem.find('.name').html(this.name);
   $newProjectItem.attr('id', this.id);
@@ -25,7 +30,7 @@ ProjectItem.prototype.toHtml = function() {
   $newProjectItem.removeClass('template');
   return $newProjectItem;
 };
-
+*/
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
 });
