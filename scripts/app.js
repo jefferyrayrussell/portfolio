@@ -13,6 +13,8 @@ function ProjectItem (object){
 ProjectItem.prototype.toHtml = function() {
   var $source = $('#project-template').html();
   var template = Handlebars.compile($source);
+  return template(this);
+};
 
 /*
 ProjectItem.prototype.toHtml = function() {
