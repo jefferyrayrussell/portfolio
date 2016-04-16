@@ -1,3 +1,4 @@
+//The code below is an object constructor which creates an object containing the essential properties for each of my projects.  The variable projectDataItems is an array that will store the various instances of the object.
 var projectDataItems = [];
 
 function ProjectItem (object){
@@ -11,29 +12,31 @@ function ProjectItem (object){
   this.summary = object.summary;
 };
 
+// The code below is a methody using jQuery and Handlebars to organizes my coding projects so that they can later be appended to my web page.  The project-template is found on the index.html page.
 ProjectItem.prototype.toHtml = function() {
   var $source = $('#project-template').html();
   var template = Handlebars.compile($source);
   return template(this);
 };
 
+// The code below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above.
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
 });
 
+// The code below does the actual appending to the web page. It is appended at the class location identified as portfolio-projects.
 projectDataItems.forEach(function(a){
-  $('#projects').append(a.toHtml());
+  $('#portfolio-projects').append(a.toHtml());
 });
+
+// The code below provides functionality to the buttons on the navigation bar with the class "page-content".  The other buttons on the navigation which employ icons are merely links to personal social media pages as well as my Github repository.  When a page content button is clicked, either welcome, resume, or projects, the other information disappears from the page.
 
 var infoRendered = {};
 
 infoRendered.handleNavigationBar = function(){
-  console.log('handleNavigationBar1');
   $('.navigation-bar').on('click', '.page-tab', function(){
-    console.log('handleNavigationBar2');
     $('.page-content').hide();
     $('#' + $(this).data('content')).show();
-    console.log('#' + $(this).data('content'));
   });
 
   $('.navigation-bar .page:first').click();

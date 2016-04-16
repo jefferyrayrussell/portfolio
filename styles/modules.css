@@ -28,7 +28,7 @@ nav {
   display: block;
   position: relative;
   margin: 5px auto;
-  background-color: #407F7F;
+  background-color: #6BA099;
   border-radius: 10px;
 
 }
@@ -47,6 +47,9 @@ nav li{
 article {
   text-align: center;
 }
+
+.page-tab
+.links-tab
 
 @media only screen and (min-width: 700px) {
   .icon-menu {
