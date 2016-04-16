@@ -29,6 +29,7 @@ nav {
   position: relative;
   margin: 5px auto;
   background-color: #407F7F;
+  border-radius: 10px;
 
 }
 nav ul{
