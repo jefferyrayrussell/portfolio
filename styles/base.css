@@ -1,3 +1,21 @@
+body {
+  padding: 1em;
+  background-color: #FFFFF8;
+  color: #003333;
+}
+
+header {
+  border-radius: 10px
+}
+
+.portfolio-header {
+  background-color: #80A5A2;
+  text-color:
+  text-align: center;
+  padding: 1em;
+}
+
+
 main {
   margin: auto;
   width: 80%;
@@ -28,7 +46,7 @@ a, a:link, a:active {
 }
 
 a:hover, a:focus {
-  color: #0D4D4D;
+  color: #13B4A4;
 }
 
 a:visited {
