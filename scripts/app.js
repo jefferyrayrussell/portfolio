@@ -19,6 +19,12 @@ ProjectItem.prototype.toHtml = function() {
   return template(this);
 };
 
+ProjectItem.prototype.filterNameToHtml = function() {
+  var template = Handlebars.compile($('#name-filter-template').html());
+  return template(this);
+};
+
+
 // The code below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above.
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
@@ -27,6 +33,7 @@ projectData.forEach(function(ele) {
 // The code below does the actual appending to the web page. It is appended at the class location identified as portfolio-projects.
 projectDataItems.forEach(function(a){
   $('#portfolio-projects').append(a.toHtml());
+  $('#name-filter').append(a.filterNameToHtml());
 });
 
 // The code below provides functionality to the buttons on the navigation bar with the class "page-content".  The other buttons on the navigation which employ icons are merely links to personal social media pages as well as my Github repository.  When a page content button is clicked, either welcome, resume, or projects, the other information disappears from the page.
@@ -42,6 +49,21 @@ infoRendered.handleNavigationBar = function(){
   $('.navigation-bar .page:first').click();
 };
 
+// The code below provides functionality to a filter by title bar placed below the projects heading.
+
+infoRendered.handleNameFilter = function() {
+  $('#name-filter').on('change', function(e) {
+    if ($(this).val()) {
+      $('article').hide();
+      $('article[data-name="' + $(this).val() + '"]').show();
+    } else {
+      $('article').show();
+    }
+  });
+};
+
 $(document).ready(function(){
+  //infoRendered.handleTitleFilter();
   infoRendered.handleNavigationBar();
+  infoRendered.handleNameFilter();
 });

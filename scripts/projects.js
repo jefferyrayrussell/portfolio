@@ -1,5 +1,5 @@
 var projectData = [
-  
+
   {
     name:'Budget Buddy',
     id:'budget-buddy',
