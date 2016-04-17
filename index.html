@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Jeffery Ray Russell: Professional Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="vendor/vendorstyles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
     <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
     <script id="project-template" type="text/x-handlebars-template">
       <article class="project-container" data-name="{{name}}">
         <h4>{{name}}</h4>
@@ -39,8 +39,15 @@
         </ul>
       </nav>
       <section id="portfolio-welcome" class="page-content">
-        <h3>Welcome!</h3>
-        <p> Welcome to my Professional Portfolio page. I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201.   Code 101 is a one day "Introduction to Software Development & Careers in Tech." Code 201 is an intensive four week "Foundations of Software Development" laying a foundation in HTML, CSS, and JavaScript.  I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures.  Please view my resume and portfolio.  Thank you for visiting. </p>
+        <header>
+          <h3>Welcome!</h3>
+        </header>
+        <div class="welcome-photo">
+          <img src="images/welcome-photo.jpg">
+        </div>
+        <article class="welcome-message">
+          <p> Welcome to my Professional Portfolio page. I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201.   Code 101 is a one day "Introduction to Software Development and Careers in Tech." Code 201 is an intensive four week "Foundations of Software Development" laying a foundation in HTML, CSS, and JavaScript.  I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures.  Please view my resume and portfolio.  Thank you for visiting my web page. </p>
+        </article>
       </section>
       <section id="portfolio-resume" class="page-content">
         <h3>Resume</h3>
@@ -62,5 +69,6 @@
     <script src="scripts/projects.js"></script>
     <script src="scripts/resume.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/render.js"></script>
   </body>
 </html>
