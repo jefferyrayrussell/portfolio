@@ -24,7 +24,6 @@ ProjectItem.prototype.filterNameToHtml = function() {
   return template(this);
 };
 
-
 // The code below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above.
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
@@ -49,7 +48,7 @@ infoRendered.handleNavigationBar = function(){
   $('.navigation-bar .page:first').click();
 };
 
-// The code below provides functionality to a filter by title bar placed below the projects heading.
+// The code below provides functionality to a filter by title bar placed below the projects heading.  When the name of a project is selected the other projects disappear from the page and leave that project.
 
 infoRendered.handleNameFilter = function() {
   $('#name-filter').on('change', function(e) {
@@ -62,8 +61,8 @@ infoRendered.handleNameFilter = function() {
   });
 };
 
+// The code below calls the above jQuery methods after the page has been completely loaded.
 $(document).ready(function(){
-  //infoRendered.handleTitleFilter();
   infoRendered.handleNavigationBar();
   infoRendered.handleNameFilter();
 });
