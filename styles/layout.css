@@ -1,35 +1,24 @@
-nav {
-  display: block;
-  position: relative;
-  margin: 5px auto;
-  background-color: #80A5A2;
-  border-radius: 10px;
-
-}
-nav ul{
-  text-align: center;
-  margin-left: ;
-}
-nav li{
-  display: inline-block;
-  text-align: center;
-  margin: 5 auto;
-  padding: 5px 5px;
-  font-family:
-}
-
-nav ul .page-tab {
-  display: inline-block;
-  float: left;
-}
-
-nav ul .sociallinks-tab {
-  display: inline-block;
-}
 
 header.portfolio-header {
   background-color: #80A5A2;
   text-align: center;
   padding: 1em;
   border-radius: 10px;
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+article {
+  text-align: center;
+}
+
+p {
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  border: 5px solid black;
 }

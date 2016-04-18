@@ -1,6 +1,31 @@
+nav {
+  display: block;
+  position: relative;
+  margin: 5px auto;
+  background-color: #80A5A2;
+  border-radius: 10px;
 
+}
+nav ul{
+  text-align: center;
+  margin-left: ;
+}
+nav li{
+  display: inline-block;
+  text-align: center;
+  margin: 5 auto;
+  padding: 5px 5px;
+  font-family:
+}
 
+nav ul .page-tab {
+  display: inline-block;
+  float: left;
+}
 
+nav ul .sociallinks-tab {
+  display: inline-block;
+}
 
 @media only screen and (min-width: 700px) {
   .icon-menu {

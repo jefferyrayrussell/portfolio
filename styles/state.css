@@ -4,9 +4,14 @@ a, a:link, a:active {
 }
 
 a:hover, a:focus {
-  color: #13B4A4;
+  font-weight: bolder;
+  /*color: #13B4A4;*/
 }
 
-.project-container:link {
+.project-container a{
   color: #80A5A2;
+}
+
+.template {
+  display: none;
 }
