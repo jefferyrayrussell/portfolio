@@ -2,19 +2,8 @@ body {
   padding: 1em;
   background-color: #FFFFF8;
   color: #003333;
+  width: 80%;
 }
-
-header {
-  border-radius: 10px
-}
-
-.portfolio-header {
-  background-color: #80A5A2;
-  text-color:
-  text-align: center;
-  padding: 1em;
-}
-
 
 main {
   margin: auto;
@@ -22,32 +11,22 @@ main {
   text-align: left;
 }
 
+header {
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+article {
+  text-align: center;
+}
+
 p {
   text-align: left;
 }
 
-hr {
-  margin: 1em;
-  width: 80%;
-}
-
-h2 {
-  text-align: center;
-}
-
 img {
   max-width: 100%;
-}
-
-
-a, a:link, a:active {
-  color: #003333;
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  color: #13B4A4;
-}
-
-a:visited {
+  border: 5px solid black;
 }

@@ -1,0 +1,12 @@
+a, a:link, a:active {
+  color: #003333;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #13B4A4;
+}
+
+.project-container:link {
+  color: #80A5A2;
+}

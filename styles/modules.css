@@ -1,55 +1,6 @@
-.template {
-  display: none;
-}
 
-.draft {
-  display: none;
-}
 
-.byline {
-  color: #777;
-}
 
-.byline a {
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
-
-nav {
-  display: block;
-  position: relative;
-  margin: 5px auto;
-  background-color: #80A5A2;
-  border-radius: 10px;
-
-}
-nav ul{
-  text-align: center;
-  margin-left: -40px;
-}
-nav li{
-  display: inline-block;
-  text-align: center;
-  margin: 5 auto;
-  padding: 5px 5px;
-  font-family:
-}
-
-article {
-  text-align: center;
-}
-
-.page-tab
-.links-tab
 
 @media only screen and (min-width: 700px) {
   .icon-menu {
@@ -62,5 +13,4 @@ article {
     display: inline-block;
     padding: 0 30px 0 30px;
   }
-
 }
