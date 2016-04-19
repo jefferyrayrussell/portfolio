@@ -10,6 +10,13 @@ infoRendered.handleNavigationBar = function(){
   $('.navigation-bar .page:first').click();
 };
 
+// This old code below is moved to the render page from the app.js page; it is used to filter the projects by name.  It has been moved to the render.js page.
+ProjectItem.prototype.filterNameToHtml = function() {
+  var template = Handlebars.compile($('#name-filter-template').html());
+  return template(this);
+};
+var $source = $('#project-template').html();
+
 // The code below provides functionality to a filter by title bar placed below the projects heading.  When the name of a project is selected the other projects disappear from the page and leave that project.
 
 infoRendered.handleNameFilter = function() {
