@@ -1,46 +1,60 @@
-//The code below is an object constructor which creates an object containing the essential properties for each of my projects.  The variable projectDataItems is an array that will store the various instances of the object.
-var projectDataItems = [];
+// Old Constructor
+    /*
+    var projectDataItems = [];
 
-function ProjectItem (object){
-  this.name = object.name;
-  this.id = object.id;
-  this.class = object.class;
-  this.creators = object.creators;
-  this.date = object.date;
-  this.repoUrl = object.repoUrl;
-  this.location = object.location;
-  this.summary = object.summary;
-};
+    function ProjectItem (object){
+      this.name = object.name;
+      this.id = object.id;
+      this.class = object.class;
+      this.creators = object.creators;
+      this.date = object.date;
+      this.repoUrl = object.repoUrl;
+      this.location = object.location;
+      this.summary = object.summary;
+    };
+    */
 
-// Alternative to the above?
-/*
-function ProjectItem (projectDataItems) {
-  for (key in projectDatatItems) {
-    this[key] = projectDataItems[key];
+// New Constructor
+function ProjectItem (objects) {
+  for (key in objects) {
+    this[key] = objects[key];
   };
 };
-*/
 
-// The code below is a method using jQuery and Handlebars to organizes my coding projects so that they can later be appended to my web page.  The project-template is found on the index.html page.
+ProjectItem.all = [];
+
+// Old Prototypes
+    /*
+    ProjectItem.prototype.toHtml = function() {
+      var $source = $('#project-template').html();
+      var template = Handlebars.compile($source);
+      return template(this);
+    };
+    ProjectItem.prototype.filterNameToHtml = function() {
+      var template = Handlebars.compile($('#name-filter-template').html());
+      return template(this);
+    };
+    */
+
+// New Prototypes
+
 ProjectItem.prototype.toHtml = function() {
-  var $source = $('#project-template').html();
-  var template = Handlebars.compile($source);
+  var $newProjectItem = Handlebars.compile($(template).html());
+
+
   return template(this);
 };
+
+ProjectItem.loadAll = function(data) {
+  Project.all.push(new ProjectItem(ele));
+};
+
 
 ProjectItem.prototype.filterNameToHtml = function() {
   var template = Handlebars.compile($('#name-filter-template').html());
   return template(this);
 };
-
-// Alternative to the above?
-/*
-ProjectItem.prototype.toHtml = function(template) {
-  var template = Handlebars.compile($('template').html());
-  return template(this);
-};
-*/
-
+var $source = $('#project-template').html();
 // The code below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above.
 projectData.forEach(function(ele) {
   projectDataItems.push(new ProjectItem(ele));
@@ -52,19 +66,7 @@ projectDataItems.forEach(function(a){
   $('#name-filter').append(a.filterNameToHtml());
 });
 
-// Alternative to the above?
-/*
-projectDataItems.forEach(function(a) {
-  $('#portfolio-projects').append(a.toHtml('#project-template'));
-  if (categories.indexOf(a.category)){
-    $('.filters ul').append(a.toHTML('#category-filter-template'));
-    categories.push(a.category);
-  };
-});
-*/
 // The function below retrieves data from either a local or remote source and processes the data before handing off control to the view.
-ProjectItem.all = [];
-
 ProjectItem.fetchAll = function () {
   if (localStorage.projectData) {
     ProjectItem.loadAll(
@@ -72,7 +74,7 @@ ProjectItem.fetchAll = function () {
     );
     infoRendered.initIndexPage();
   } else {
-    $getJSON('data/projectData.json', function(data) {
+    $.getJSON('data/projectData.json', function(data) {
       ProjectItem.loadAll(data);
       localStorage.projectData = JSON.stringify(data);
       infoRendered.initIndexPage();
