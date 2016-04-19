@@ -36,37 +36,43 @@ ProjectItem.all = [];
     };
     */
 
-// New Prototypes
-
+// New Prototype
 ProjectItem.prototype.toHtml = function() {
-  var $newProjectItem = Handlebars.compile($(template).html());
-
-
+  var template = Handlebars.compile($('#project-container').html());
   return template(this);
 };
 
+// The OLD FUNCTION below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above. This OLD CODE is replaced by the function NEW FUNCTION below.
+    /*
+    projectData.forEach(function(ele) {
+      projectDataItems.push(new ProjectItem(ele));
+    });
+    */
+
+//NEW FUNCTION  This function takes our data and use it to instantiate all of the projects to be displayed.
 ProjectItem.loadAll = function(data) {
-  Project.all.push(new ProjectItem(ele));
-};
+  data.forEach(function(ele) {
+    ProjectItem.all.push(new ProjectItem(ele));
+}
 
+// The OLD CODE below is moved to the render page; it is used to filter the projects by name.  It has been moved to the render.js page.
+    /*
+    ProjectItem.prototype.filterNameToHtml = function() {
+      var template = Handlebars.compile($('#name-filter-template').html());
+      return template(this);
+    };
+    var $source = $('#project-template').html();
+    */
 
-ProjectItem.prototype.filterNameToHtml = function() {
-  var template = Handlebars.compile($('#name-filter-template').html());
-  return template(this);
-};
-var $source = $('#project-template').html();
-// The code below takes the projectData from each of the my projects found on the projects.js file and pushes it through the projectItem constructor above and then stores it in an array called projectDataItems which was introduced above.
-projectData.forEach(function(ele) {
-  projectDataItems.push(new ProjectItem(ele));
-});
 
 // The code below does the actual appending to the web page. It is appended at the class location identified as portfolio-projects.
-projectDataItems.forEach(function(a){
+ProjectItem.forEach(function(a){
   $('#portfolio-projects').append(a.toHtml());
   $('#name-filter').append(a.filterNameToHtml());
 });
 
-// The function below retrieves data from either a local or remote source and processes the data before handing off control to the view.
+// NEW CODE: The functions below retrieves data from either a local or remote source and processes the data before handing off control to the view.
+
 ProjectItem.fetchAll = function () {
   if (localStorage.projectData) {
     ProjectItem.loadAll(
