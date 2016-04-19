@@ -64,9 +64,8 @@ ProjectItem.loadAll = function(data) {
     var $source = $('#project-template').html();
     */
 
-
 // The code below does the actual appending to the web page. It is appended at the class location identified as portfolio-projects.
-ProjectItem.forEach(function(a){
+projectData.forEach(function(a){
   $('#portfolio-projects').append(a.toHtml());
   $('#name-filter').append(a.filterNameToHtml());
 });
