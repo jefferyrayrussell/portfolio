@@ -11,22 +11,26 @@
     <link rel="stylesheet" href="styles/state.css">
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
+
     <script id="project-template" type="text/x-handlebars-template">
       <article class="project-container" data-name="{{name}}">
         <h4>{{name}}</h4>
-        <p>The code project named {{name}} was completed by {{creators}} on {{date}} for {{location}}. You can access the code at this <a href="{{repoUrl}}">github repository</a>.</p>
+        <p>The code project named {{name}} was completed by {{creators}} on {{date}} for {{location}}. You may access the code at this <a href="{{repoUrl}}">github repository</a>.</p>
         <section class="summary">{{{summary}}}</section>
       </article>
     </script>
+
     <script id="name-filter-template" type="text/x-handlebars-template">
       <option value="{{name}}">{{name}}</option>
     </script>
   </head>
+
   <body>
     <main>
       <header class="portfolio-header">
         <h2>Jeffery Ray Russell: Professional Portfolio</h2>
       </header>
+
       <nav class="navigation-bar">
         <ul>
           <li class="page-tab" data-content="portfolio-welcome"><a href="#">Welcome</a></li>
@@ -38,6 +42,7 @@
           <li class="sociallinks-tab"><a href="http://linkedin.com/jefferyrayrussell" target="_blank" class="icon-linkedin"></a></li>
         </ul>
       </nav>
+
       <section id="portfolio-welcome" class="page-content">
         <header>
           <h3>Welcome!</h3>
@@ -49,10 +54,12 @@
           <p> Welcome to my Professional Portfolio page. I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201.   Code 101 is a one day "Introduction to Software Development and Careers in Tech." Code 201 is an intensive four week "Foundations of Software Development" laying a foundation in HTML, CSS, and JavaScript.  I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures.  Please view my resume and portfolio.  Thank you for visiting my web page. </p>
         </article>
       </section>
+
       <section id="portfolio-resume" class="page-content">
         <h3>Resume</h3>
         <p>I love the work of web development.  It encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
       </section>
+
       <section id="portfolio-projects" class="page-content">
         <h3>Projects</h3>
         <div class="style-filters">
@@ -61,15 +68,15 @@
           </select>
         </div>
       </section>
+
     </main>
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="scripts/projects.js"></script>
-    <script src="scripts/resume.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/render.js"></script>
+    <!-- <script src="scripts/projects.js"></script> -->
+    <script src="scripts/portfolio.js"></script>
+    <script src="scripts/portfolioView.js"></script>
     <script>
       ProjectItem.fetchAll();
     </script>

@@ -7,10 +7,11 @@
     this.name = object.name;
     this.id = object.id;
     this.class = object.class;
-    this.creators = object.creators;
+    this.developers = object.developers;
     this.date = object.date;
-    this.repoUrl = object.repoUrl;
-    this.location = object.location;
+    this.occasion = object.occasion;
+    this.link = object.link;
+    this.image = object.image;
     this.summary = object.summary;
   }
 
