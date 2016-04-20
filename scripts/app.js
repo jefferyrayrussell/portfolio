@@ -1,25 +1,18 @@
-// Old Constructor
-    /*
-    var projectDataItems = [];
 
-    function ProjectItem (object){
-      this.name = object.name;
-      this.id = object.id;
-      this.class = object.class;
-      this.creators = object.creators;
-      this.date = object.date;
-      this.repoUrl = object.repoUrl;
-      this.location = object.location;
-      this.summary = object.summary;
-    };
-    */
+    // var projectDataItems = [];
 
-// New Constructor
-function ProjectItem (objects) {
-  for (key in objects) {
-    this[key] = objects[key];
-  };
-};
+(function (module) {
+
+  function ProjectItem (object){
+    this.name = object.name;
+    this.id = object.id;
+    this.class = object.class;
+    this.creators = object.creators;
+    this.date = object.date;
+    this.repoUrl = object.repoUrl;
+    this.location = object.location;
+    this.summary = object.summary;
+  }
 
 ProjectItem.all = [];
 
@@ -65,7 +58,8 @@ ProjectItem.loadAll = function(data) {
     */
 
 // The code below does the actual appending to the web page. It is appended at the class location identified as portfolio-projects.
-projectData.forEach(function(a){
+
+projectItem.forEach(function(a){
   $('#portfolio-projects').append(a.toHtml());
   $('#name-filter').append(a.filterNameToHtml());
 });
@@ -108,3 +102,6 @@ ProjectItem.fetchAll = function() {
     }
   });
 };
+
+module.ProjectItem=ProjectItem;
+})(window);
