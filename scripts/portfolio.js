@@ -62,7 +62,14 @@
       localStorage.eTag = JSON.stringify(eTag);
     }
   });
+  $.getJSON('data/projectsData.json', function(data){
+      ProjectItem.loadAll(data);
+      localStorage.projectsData = JSON.stringify(ProjectItem.all);
+      portfolioView.initIndexPage();
+    });
+  }
+};
 
-  module.ProjectItem = ProjectItem;
+module.ProjectItem = ProjectItem;
 
-})(window);
+}(window));
