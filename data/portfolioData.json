@@ -1,9 +1,6 @@
 [
   {
-    "name": "Budget Buddy",
-    "id": "budget-buddy",
-    "class": "code-project-3",
-    "developers": "Jeff, Stephanie, Vic, and Danny",
+    "title": "Budget Buddy",
     "date": "April 8, 2016",
     "occasion": "Code Fellows 201",
     "link": "https://github.com/stefuhnee/budget-buddy",
@@ -12,10 +9,7 @@
   },
 
   {
-    "name": "Bus Mall",
-    "id": "bus-mall",
-    "class": "code-project-2",
-    "developers": "Jeff Russell",
+    "title": "Bus Mall",
     "date": "April 1, 2016",
     "occasion": "Code Fellows 201",
     "link": "https://github.com/jefferyrayrussell/bus-mall",
@@ -24,9 +18,7 @@
   },
 
   {
-    "name": "Pizza Odyssey",
-    "id": "pizza-odyssey",
-    "class": "code-project-1",
+    "title": "Pizza Odyssey",
     "developers": "Jeff Russell",
     "date": "March 25, 2016",
     "occasion": "Code Fellows 201",

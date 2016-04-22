@@ -12,26 +12,22 @@
   };
 
   portfolioView.handleNameFilter = function() {
-    $('#name-filter').on('change', function(e) {
+    $('#title-filter').on('change', function(e) {
       if ($(this).val()) {
         $('article').hide();
-        $('article[data-name="' + $(this).val() + '"]').show();
+        $('article[data-title="' + $(this).val() + '"]').show();
       } else {
         $('article').show();
       }
     });
   };
 
-  portfolioView.initIndexPage = function () {
-    ProjectItem.all.forEach(function(a){
-      $('#portfolio-projects').append(a.toHtml());
+  portfolioView.initializeIndex = function() {
+    PortfolioItem.all.forEach(function(a){
+      $('#portfolio-container').append(a.toHtml());
     });
-  };
-
-  $(document).ready(function(){
     portfolioView.handleNavigationBar();
-    portfolioView.handleNameFilter();
-  });
+  };
 
   module.portfolioView = portfolioView;
 })(window);
