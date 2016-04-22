@@ -1,5 +1,6 @@
 
 (function(module){
+
   var portfolioView = {};
 
   /* This code provides functionality to the navigation bar tabs sot that
@@ -7,7 +8,7 @@
 
   portfolioView.handleNavigationBar = function(){
     $('.navigation-bar').on('click', '.page-tab', function(){
-      $('.page-content').hide();
+      //$('.page-content').hide();
       $('#' + $(this).data('content')).show();
     });
     $('.navigation-bar .page:first').click();

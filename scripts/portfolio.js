@@ -7,13 +7,19 @@ conflict with other variables.*/
 
 /* The original object constructor has been converted to a more efficient functional
 programming style.  All properties of "project" are assigned as properties of the
-newly created PortfolioItem object.*/
+newly created PortfolioItem object.
 
   function PortfolioItem (project){
     for (key in project) {
       this[key] = project[key];
     };
   };
+*/
+  function PortfolioItem (project){
+    for (key in project)
+      this[key] = project[key];
+  };
+
 
 /* The list of all portfolio projects is directly tracked on the constructor
 function. All of the key value pairs that provide content to each portfolio
@@ -28,7 +34,8 @@ to return a string containing all of the matched elements defined in the head of
 the index.html file. */
 
   PortfolioItem.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#portfolio-template').text());
+    var template = Handlebars.compile($('#portfolio-template').html());
+    this.daysAgo = parseInt((new Date() - new Date(this.date)) / 60 / 60 / 24 / 1000);
     return template(this);
   };
 
@@ -37,7 +44,7 @@ the index.html file. */
 place on a title filter bar.*/
 
   PortfolioItem.prototype.filterTitleToHtml = function() {
-    var template = Handlebars.compile($('#filter-template').text());
+    var template = Handlebars.compile($('#filter-template').html());
     return template(this);
   };
 
@@ -49,9 +56,12 @@ oadAll function attached to the PortfolioItem constructor takes data and uses
 it to instantiate all of the portfolio items.
  */
 
-  PortfolioItem.loadAll = function(data){
-    PortfolioItem.all = data.map(function(ele){
-      return new PortfolioItem(ele);
+  PortfolioItem.loadAll = function(dataFromJSON){
+    dataFromJSON.sort(function(a,b){
+      return (new Date(b.date)) - (new Date(a.date));
+    });
+    dataFromJSON.forEach(function(ele){
+      PortfolioItem.all.push(new PortfolioItem(ele));
     });
   };
 
@@ -61,36 +71,36 @@ the window. In this case the data is found on a json file and preserved
 in Local Storage. The JSON stringify method converts a JavaScript value to a JSON
 string.*/
 
-  PortfolioItem.getAll = function(runTheFunction){
-    $.getJSON('data/portfolioData.json', function(data){
-      PortfolioItem.loadAll(data);
-      localStorage.portfolioData = JSON.stringify(data);
-      runTheFunction();
-    });
-  };
+  // PortfolioItem.getAll = function(runTheFunction){
+  //   $.getJSON('data/portfolioData.json', function(data){
+  //     PortfolioItem.loadAll(data);
+  //     //localStorage.portfolioData = JSON.stringify(data);
+  //     runTheFunction();
+  //   });
+  // };
 
 /* The code below reads the eTag located in the headers of the portfolioData
 in order to see if it is updated. If it is not updated it will update it.*/
 
-  PortfolioItem.fetchAll = function (run){
-    if (localStorage.portfolioData) {
-      $.ajax( {
-        type: 'HEAD',
-        url: 'data/portfolioData.json',
-        success: function(data, message, xhr) {
-          var eTag = xhr.getResponseHeader('eTag');
-          if (!localStorage.eTag || eTag !== localStorage.eTag) {
-            PortfolioItem.loadAll(JSON.parse(localStorage.portfolioData));
-            run();
-          } else {
+  PortfolioItem.fetchAll = function (next){
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/portfolioData.json',
+      success: function(data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        if (eTag === localStorage.eTag) {
+          PortfolioItem.loadAll(JSON.parse(localStorage.portfolioData));
+          next();
+        } else {
+          $.getJSON('data/portfolioData.json', function(data){
+            PortfolioItem.loadAll(data);
+            localStorage.portfolioData = JSON.stringify(data);
             localStorage.eTag = eTag;
-            PortfolioItem.getAll(run);
-          }
+            next();
+          });
         }
-      });
-    } else {
-      PortfolioItem.getAll(run);
-    }
+      }
+    });
   };
 
   module.PortfolioItem = PortfolioItem;
