@@ -42,10 +42,12 @@ place on a title filter bar.*/
   };
 
 /* The code below relates to all of the instances of the PortfolioItem object.
-These are often referred to as class level functions.  The loadAll function
-attached to the PortfolioItem constructor takes data and uses it to instantiate
-all of the portfolio items.  The map method creates a new array with results of
-calling a function for every array element. */
+These are often referred to as class level functions.  Here, we re transforming
+one collection of data into another.  The map method (replacing push) creates
+a new array with results of calling a function for every array element. The l
+oadAll function attached to the PortfolioItem constructor takes data and uses
+it to instantiate all of the portfolio items.
+ */
 
   PortfolioItem.loadAll = function(data){
     PortfolioItem.all = data.map(function(ele){
@@ -54,56 +56,40 @@ calling a function for every array element. */
   };
 
 /* The code below retrieves the data from a local or remote source, and then
-processes the data, and hands it off to be placed on the window. In this case
-the data is found on a json file and preserved in Local Storage.*/
+processes the data (see the map method above), and hands it off to be placed on
+the window. In this case the data is found on a json file and preserved
+in Local Storage. The JSON stringify method converts a JavaScript value to a JSON
+string.*/
 
-  PortfolioItem.getAll = function(callBackFunction){
+  PortfolioItem.getAll = function(runTheFunction){
     $.getJSON('data/portfolioData.json', function(data){
       PortfolioItem.loadAll(data);
       localStorage.portfolioData = JSON.stringify(data);
-      callBackFunction();
+      runTheFunction();
     });
   };
 
+/* The code below reads the eTag located in the headers of the portfolioData
+in order to see if it is updated. If it is not updated it will update it.*/
 
-
-  PorfolioItem.fetchAll = function (){
-    localStorage.eTag = JSON.stringify(0);
+  PortfolioItem.fetchAll = function (run){
     if (localStorage.portfolioData) {
       $.ajax( {
         type: 'HEAD',
         url: 'data/portfolioData.json',
         success: function(data, message, xhr) {
           var eTag = xhr.getResponseHeader('eTag');
-          if (eTag !== localStorage.eTag) {
-            $.getJSON('data/portfolioData.json', function(data) {
-              PortfolioItem.loadAll(data);
-              localStorage.portfolioData = JSON.stringify(PortfolioItem.all);
-              localStorage.eTag = JSON.stringify(eTag);
-              portfolioView.initializeIndex();
-            });
-          } else {
+          if (!localStorage.eTag || eTag !== localStorage.eTag) {
             PortfolioItem.loadAll(JSON.parse(localStorage.portfolioData));
-            portfolioView.initializeIndex();
+            run();
+          } else {
+            localStorage.eTag = eTag;
+            PortfolioItem.getAll(run);
           }
         }
       });
-
-    // 
     } else {
-      $.ajax( {
-        type: 'HEAD',
-        url: 'data/portfolioData.json',
-        success: function(data, message, xhr) {
-          var eTag = xhr.getResponseHeader('eTag');
-          localStorage.eTag = JSON.stringify(eTag);
-        }
-      });
-      $.getJSON('data/portfolioData.json', function(data){
-        PortfolioItem.loadAll(data);
-        localStorage.portfolioData = JSON.stringify(PortfolioItem.all);
-        portfolioView.initializeIndex();
-      });
+      PortfolioItem.getAll(run);
     }
   };
 
