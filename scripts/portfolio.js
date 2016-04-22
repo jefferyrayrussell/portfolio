@@ -37,7 +37,7 @@ the index.html file. */
 place on a title filter bar.*/
 
   PortfolioItem.prototype.filterTitleToHtml = function() {
-    var template = Handlebars.compile($('#title-filter-template').text());
+    var template = Handlebars.compile($('#filter-template').text());
     return template(this);
   };
 

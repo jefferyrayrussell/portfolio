@@ -1,6 +1,5 @@
 
 (function(module){
-
   var portfolioView = {};
 
   /* This code provides functionality to the navigation bar tabs sot that
@@ -28,7 +27,7 @@
     });
   };
 
-/* This code appends the navigation bar and portfolio projects on the page. */  
+/* This code appends the navigation bar and portfolio projects on the page. */
 
   portfolioView.initializeIndex = function() {
     PortfolioItem.all.forEach(function(a){
