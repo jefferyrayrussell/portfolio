@@ -2,7 +2,7 @@
 (function(module){
   var portfolioView = {};
 
-  /* This code provides functionality to the navigation bar tabs sot that
+  /* This code provides functionality to the navigation bar tabs so that
   when one tab is clicked the content associated with the other tabs disappears. */
 
   portfolioView.handleNavigationBar = function(){
@@ -34,6 +34,7 @@
       $('#portfolio-container').append(a.toHtml());
     });
     portfolioView.handleNavigationBar();
+    portfolioView.handleTitleFilter();
   };
 
   module.portfolioView = portfolioView;

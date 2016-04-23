@@ -13,13 +13,8 @@
     <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
     <script id="portfolio-template" type="text/x-handlebars-template">
         <h4>{{title}}</h4>
-        <p>{{date}}</p>
-        <p>{{occasion}}</p>
-        <p>{{link}}</p>
-        <p>{{image}}</p>
-        <p>{{summary}}</p>
-        <!-- <p>The code project named {{title}} was completed on {{date}} for {{occasion}}. You may access the code at this <a href="{{link}}">github repository</a>.</p> -->
-        <!-- <section class="summary">{{{summary}}}</section> -->
+        <p>The code project named {{title}} was completed on {{date}} for {{occasion}}. You may access the code at this <a href="{{link}}">github repository</a>.</p>
+        <section class="summary">{{{summary}}}</section>
     </script>
     <script id="filter-template" type="text/x-handlebars-template">
       <option value="{{title}}">{{title}}</option>
@@ -69,7 +64,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <!-- <script src="scripts/projects.js"></script> -->
     <script src="scripts/portfolio.js"></script>
     <script src="scripts/portfolioView.js"></script>
     <script>
