@@ -2,7 +2,7 @@
 (function(module){
   var portfolioView = {};
 
-  /* This code provides functionality to the navigation bar tabs sot that
+  /* This code provides functionality to the navigation bar tabs so that
   when one tab is clicked the content associated with the other tabs disappears. */
 
   portfolioView.handleNavigationBar = function(){
@@ -16,13 +16,26 @@
   /* This code provides functionality to the filter bar that allows you to select
   one of the displayed portfolio projects and the other projects disappear. */
 
+  portfolioView.populateTitleFilter = function() {
+    $('article').each(function() {
+      if (!$(this).hasClass('portfolio-template')) {
+        var val = $(this).attr('data-title');
+        var optionTag = '<option value="' + val + '">' + val + '</option>';
+        if ($('#title-filter option[value="' + val + '"]').length === 0) {
+          $('#title-filter').append(optionTag);
+        }
+      }
+    });
+  };
+
   portfolioView.handleTitleFilter = function() {
-    $('#title-filter').on('change', function(e) {
+    $('#title-filter').on('change', function() {
       if ($(this).val()) {
         $('article').hide();
-        $('article[data-title="' + $(this).val() + '"]').show();
+        $('article[data-title="' + $(this).val() + '"]').fadeIn();
       } else {
-        $('article').show();
+        $('article').fadeIn();
+        $('article.template').hide();
       }
     });
   };
@@ -32,8 +45,10 @@
   portfolioView.initializeIndex = function() {
     PortfolioItem.all.forEach(function(a){
       $('#portfolio-container').append(a.toHtml());
+      portfolioView.populateTitleFilter();
+      portfolioView.handleTitleFilter();
+      portfolioView.handleNavigationBar();
     });
-    portfolioView.handleNavigationBar();
   };
 
   module.portfolioView = portfolioView;
