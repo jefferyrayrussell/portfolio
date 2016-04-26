@@ -5,13 +5,13 @@
   /* This code provides functionality to the navigation bar tabs so that
   when one tab is clicked the content associated with the other tabs disappears. */
 
-  portfolioView.handleNavigationBar = function(){
-    $('.navigation-bar').on('click', '.page-tab', function(){
-      $('.page-content').hide();
-      $('#' + $(this).data('content')).show();
-    });
-    $('.navigation-bar .page:first').click();
-  };
+  // portfolioView.handleNavigationBar = function(){
+  //   $('.navigation-bar').on('click', '.page-tab', function(){
+  //     $('.page-content').hide();
+  //     $('#' + $(this).data('content')).show();
+  //   });
+  //   $('.navigation-bar .page:first').click();
+  // };
 
   /* This code provides functionality to the filter bar that allows you to select
   one of the displayed portfolio projects and the other projects disappear. */
@@ -47,7 +47,7 @@
       $('#portfolio-container').append(a.toHtml());
       portfolioView.populateTitleFilter();
       portfolioView.handleTitleFilter();
-      portfolioView.handleNavigationBar();
+      // portfolioView.handleNavigationBar();
     });
   };
 
