@@ -1,30 +1,25 @@
-nav {
-  display: block;
-  position: relative;
-  margin: 5px auto;
-  background-color: #80A5A2;
-  border-radius: 10px;
 
-}
-nav ul{
+
+header.portfolio-header{
+  background-color: #80A5A2;
   text-align: center;
-  margin-left: ;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 5em;
+  border: 5px solid black;
+  border-radius: 10px;
 }
-nav li{
+
+nav ul {
+  padding: 0px;
+}
+
+nav li {
   display: inline-block;
   text-align: center;
   margin: 5 auto;
   padding: 5px 5px;
   font-family:
-}
-
-nav ul .page-tab {
-  display: inline-block;
-  float: left;
-}
-
-nav ul .sociallinks-tab {
-  display: inline-block;
 }
 
 @media only screen and (min-width: 700px) {

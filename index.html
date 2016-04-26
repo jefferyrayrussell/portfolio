@@ -12,47 +12,54 @@
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
     <script id="portfolio-template" type="text/x-handlebars-template">
-        <h4>{{title}}</h4>
-        <p>The code project named {{title}} was completed on {{date}} for {{occasion}}. You may access the code at this <a href="{{link}}">github repository</a>.</p>
-        <section class="summary">{{{summary}}}</section>
-    </script>
-    <script id="filter-template" type="text/x-handlebars-template">
-      <option value="{{title}}">{{title}}</option>
-    </script>
+      <article class="clearfix" data-title="{{title}}">
+        <header>
+          <h4>{{title}}</h4>
+          <div class="byline">
+            <p>The code project named {{title}} was completed on {{date}} for {{occasion}}. You may access the code at this <a href="{{link}}">github repository</a>.</p>
+            <img src="{{image}}">
+          </div>
+        </header>
+        <section class="project-summary">{{{summary}}}</section>
+      </article>
+   </script>
   </head>
   <body>
-    <main>
-      <header class="portfolio-header">
-        <h2>Jeffery Ray Russell: Professional Portfolio</h2>
-      </header>
+    <header class="portfolio-header">
+      <section class="main-header-text">
+        <h1>Jeff Russell</h1>
+        <h2>Professional Portfolio</h2>
+      </section>
       <nav class="navigation-bar">
         <ul>
           <li class="page-tab" data-content="portfolio-welcome"><a href="#">Welcome</a></li>
           <li class="page-tab" data-content="portfolio-resume"><a href="#">Resume</a></li>
-          <li class="page-tab" data-content="portfolio-projects"><a href="#">Portfolio Projects</a></li>
+          <li class="page-tab" data-content="portfolio-container"><a href="#">Projects</a></li>
+        </ul>
+        <ul>
           <li class="sociallinks-tab"><a href="https://github.com/jefferyrayrussell" target="_blank" class="icon-github"></a></li>
           <li class="sociallinks-tab"><a href="https://www.facebook.com/jefferyrayrussell" target="_blank" class="icon-facebook2"></a></li>
           <li class="sociallinks-tab"><a href="http://twitter.com/jefferyrayrussell" target="_blank" class="icon-twitter"></a></li>
           <li class="sociallinks-tab"><a href="http://linkedin.com/jefferyrayrussell" target="_blank" class="icon-linkedin"></a></li>
         </ul>
       </nav>
+    </header>
+    <main>
       <section id="portfolio-welcome" class="page-content">
         <header>
-          <h3>Welcome!</h3>
+          <h1>Welcome!</h1>
         </header>
-        <div class="welcome-photo">
-          <img src="images/welcome-photo.jpg">
-        </div>
-        <article class="welcome-message">
+          <div class="welcome-photo">
+            <img src="images/welcome-photo.jpg">
+          </div>
           <p> Welcome to my Professional Portfolio page. I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201.   Code 101 is a one day "Introduction to Software Development and Careers in Tech." Code 201 is an intensive four week "Foundations of Software Development" laying a foundation in HTML, CSS, and JavaScript.  I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures.  Please view my resume and portfolio.  Thank you for visiting my web page. </p>
-        </article>
       </section>
       <section id="portfolio-resume" class="page-content">
-        <h3>Resume</h3>
+        <h1>Resume</h1>
         <p>I love the work of web development.  It encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
       </section>
       <section id="portfolio-container" class="page-content">
-        <h3>Projects</h3>
+        <h1>Projects</h1>
         <div class="style-filters">
           <select id="title-filter">
             <option value="">Filter by Title </option>
