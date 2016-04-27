@@ -1,19 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @jefferyrayrussell
- Watch 1
-  Star 0
-  Fork 0 aliza89p/portfolio
- Code  Issues 4  Pull requests 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathportfolio/vendor/scripts/jQuery.js
-2e17dad  a day ago
-@aliza89p aliza89p moved handlebars and jQuery to a scripts folder inside vendor
-1 contributor
-RawBlameHistory     9211 lines (7662 sloc)  242 KB
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9224,5 +9208,3 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
