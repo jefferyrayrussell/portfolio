@@ -66,19 +66,30 @@
           </select>
         </div>
       </section>
+      <section id="projects" class="page-content">
+        <h1>Projects</h1>
+        <div class="style-filters">
+          <select id="title-filter">
+            <option value="">Filter by Title </option>
+          </select>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <script src="/vendor/vendorscripts/handlebars.js"></script>
     <script src="/vendor/vendorscripts/jQuery.js"></script>
     <script src="/vendor/vendorscripts/page.js"></script>
+    <script src="scripts/githubToken.js"></script>
     <script src="scripts/model/portfolio.js"></script>
+    <script src="scripts/model/repo.js"></script>
     <script src="scripts/view/portfolioView.js"></script>
+    <script src="scripts/view/repoView.js"></script>
     <script src="scripts/controller/homeController.js"></script>
     <script src="scripts/controller/projectController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/routes.js"></script>
-    <script>
+    <!-- <script>
       PortfolioItem.fetchAll(portfolioView.initializeIndex);
-    </script>
+    </script> -->
   </body>
 </html>
