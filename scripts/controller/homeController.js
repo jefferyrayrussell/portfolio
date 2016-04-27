@@ -3,9 +3,9 @@
   var homeController = {};
 
   homeController.index = function() {
-    $('#portfolio-container').hide();
-    $('#portfolio-resume').hide();
-    $('#portfolio-welcome').show();
+    $('#projects').hide();
+    $('#about').hide();
+    $('#home').show();
   };
   module.homeController = homeController;
 })(window);

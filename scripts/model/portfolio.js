@@ -80,7 +80,7 @@ in order to see if it is updated. If it is not updated it will update it.*/
         success: function(data, message, xhr) {
           var eTag = xhr.getResponseHeader('eTag');
           if (!localStorage.eTag || eTag !== localStorage.eTag) {
-            PortfolioItem.loadAll(JSON.parse(localStorage.portfolioData));
+            PortfolioItem.getAll(JSON.parse(localStorage.portfolioData));
             run();
           } else {
             localStorage.eTag = eTag;

@@ -4,9 +4,9 @@
 
   projectController.index = function() {
     PortfolioItem.fetchAll(portfolioView.initializeIndex);
-    $('#portfolio-welcome').hide();
-    $('#portfolio-resume').hide();
-    $('#portfolio-container').show();
+    $('#home').hide();
+    $('#about').hide();
+    $('#projects').show();
   };
   module.projectController = projectController;
 })(window);

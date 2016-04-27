@@ -44,7 +44,7 @@
 
   portfolioView.initializeIndex = function() {
     PortfolioItem.all.forEach(function(a){
-      $('#portfolio-container').append(a.toHtml());
+      $('#projects').append(a.toHtml());
       portfolioView.populateTitleFilter();
       portfolioView.handleTitleFilter();
       // portfolioView.handleNavigationBar();
