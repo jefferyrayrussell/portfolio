@@ -4,19 +4,19 @@
   var ui = function () {
     var $about = $('#about');
 
-    $about.find('.github-repos').empty();
+    $about.find('.github-repositories').empty();
     $about.show().siblings().hide();
   };
 
 
   var render = function(repo) {
-    var repoTemplate = Handlebars.compile($('.repo-template').text());
-    return repoTemplate(repo);
+    var Template = Handlebars.compile($('.repo-template').text());
+    return Template(repo);
   };
 
   repoView.index = function() {
     ui();
-    $('.github-repos').append(
+    $('.github-repositories').append(
       repos.with('name').map(render)
     );
   };

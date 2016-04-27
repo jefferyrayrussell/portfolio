@@ -24,15 +24,15 @@
     });
   };
 
-  PortfolioItem.getAll = function(callBackFunction){
+  PortfolioItem.getAll = function(callBack){
     $.getJSON('data/portfolioData.json', function(data){
       PortfolioItem.loadAll(data);
       localStorage.portfolioData = JSON.stringify(data);
-      callBackFunction();
+      //callBack();
     });
   };
 
-  PortfolioItem.fetchAll = function (callBackFunction){
+  PortfolioItem.fetchAll = function (callBack){
     if (localStorage.portfolioData) {
       $.ajax( {
         type: 'HEAD',
@@ -41,15 +41,15 @@
           var eTag = xhr.getResponseHeader('eTag');
           if (!localStorage.eTag || eTag !== localStorage.eTag) {
             PortfolioItem.getAll(JSON.parse(localStorage.portfolioData));
-            callBackFunction();
+            callBack();
           } else {
             localStorage.eTag = eTag;
-            PortfolioItem.getAll(callBackFunction);
+            PortfolioItem.getAll(callBack);
           }
         }
       });
     } else {
-      PortfolioItem.getAll(callBackFunction);
+      PortfolioItem.getAll(callBack);
     }
   };
 
