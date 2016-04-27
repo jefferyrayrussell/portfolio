@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/state.css">
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
+
     <script id="portfolio-template" type="text/x-handlebars-template">
       <article class="clearfix" data-title="{{title}}">
         <header>
@@ -23,7 +24,21 @@
         <section class="project-summary">{{{summary}}}</section>
       </article>
    </script>
+
+   <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created-at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
   </head>
+
   <body>
     <header class="portfolio-header">
       <section class="main-header-text">
@@ -45,6 +60,7 @@
       </nav>
     </header>
     <main>
+
       <section id="home" class="page-content">
         <header>
           <h1>Welcome!</h1>
@@ -54,10 +70,20 @@
           </div>
           <p> Welcome to my Professional Portfolio page. I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201.   Code 101 is a one day "Introduction to Software Development and Careers in Tech." Code 201 is an intensive four week "Foundations of Software Development" laying a foundation in HTML, CSS, and JavaScript.  I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures.  Please view my resume and portfolio.  Thank you for visiting my web page. </p>
       </section>
+
       <section id="about" class="page-content">
-        <h1>Resume</h1>
-        <p>I love the work of web development.  It encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
+        <section>
+          <h1>Resume</h1>
+          <p>I love the work of web development.  It encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
+        </section>
+        <section>
+          <h1>Check out my Projects on GitHub:</h1>
+          <ul>
+            <li>Coding Projects Go Here</li>
+          </ul>
+        </section>
       </section>
+
       <section id="projects" class="page-content">
         <h1>Projects</h1>
         <div class="style-filters">
@@ -66,14 +92,7 @@
           </select>
         </div>
       </section>
-      <section id="projects" class="page-content">
-        <h1>Projects</h1>
-        <div class="style-filters">
-          <select id="title-filter">
-            <option value="">Filter by Title </option>
-          </select>
-        </div>
-      </section>
+
     </main>
     <footer></footer>
     <script src="/vendor/vendorscripts/handlebars.js"></script>
