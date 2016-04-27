@@ -4,10 +4,11 @@
   var ui = function () {
     var $about = $('#about');
 
-    $about.find('.github-repositories').empty();
+    $about.find('ul').empty();
     $about.show().siblings().hide();
   };
 
+  var render;
 
   var render = function(repo) {
     var Template = Handlebars.compile($('.repo-template').text());
@@ -16,7 +17,7 @@
 
   repoView.index = function() {
     ui();
-    $('.github-repositories').append(
+    $('#about ul').append(
       repos.with('name').map(render)
     );
   };
