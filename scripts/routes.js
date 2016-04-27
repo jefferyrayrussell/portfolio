@@ -1,5 +1,5 @@
-page('/portfolio-welcome', homeController.index);
-page('/portfolio-container', projectController.index);
-page('/portfolio-resume', aboutController.index);
+page('/', homeController.index);
+page('/about', aboutController.index);
+page('/projects', projectController.index);
 
 page();
