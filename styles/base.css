@@ -1,11 +1,13 @@
 body {
   padding: 1em;
+  margin: 1em;
   background-color: #FFFFF8;
   color: #003333;
-  width: 80%;
+  width: ;
 }
 
-header {
+h1, h2, h3 {
+  text-align: center;
 }
 
 footer {

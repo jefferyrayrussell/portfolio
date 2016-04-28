@@ -1,11 +1,11 @@
 
 
-header.portfolio-header{
+header#portfolio-header{
   background-color: #80A5A2;
   text-align: center;
   padding: 1em;
   margin: 1em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   border: 5px solid black;
   border-radius: 10px;
 }
