@@ -2,10 +2,10 @@
   var repoView = {};
 
   var ui = function () {
-    var $about = $('#about');
+    var $repos = $('#repos');
 
-    $about.find('ul').empty();
-    $about.show().siblings().hide();
+    $repos.find('p').empty();
+    $repos.show().siblings().hide();
   };
 
   var render;
@@ -17,7 +17,7 @@
 
   repoView.index = function() {
     ui();
-    $('#about ul').append(
+    $('#repos').append(
       repos.with('name').map(render)
     );
   };
