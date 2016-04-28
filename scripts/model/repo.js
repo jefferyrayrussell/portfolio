@@ -6,13 +6,14 @@
   repos.requestRepos = function(callback) {
     $.ajax({
       url:     'https://api.github.com/users/jefferyrayrussell/repos' +
-               '?per_page=10' +
+               '?per_page=4' +
                '&sort=updated',
       type:    'GET',
       headers: {'Authorization': 'token ' + githubToken},
       success: function(data) {
+        console.log(data);
         repos.all = data;
-        callback();
+        callback(data);
       }
     });
   };
