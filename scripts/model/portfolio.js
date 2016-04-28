@@ -9,7 +9,7 @@
   PortfolioItem.all = [];
 
   PortfolioItem.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#portfolio-template').text());
+    var template = Handlebars.compile($('#project-template').text());
     return template(this);
   };
 

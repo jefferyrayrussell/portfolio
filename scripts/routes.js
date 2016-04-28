@@ -1,5 +1,5 @@
-page('/', homeController.index);
-page('/about', aboutController.index);
-page('/projects', projectController.index);
-
+page('/', welcomeController.index);
+page('/resume', resumeController.index);
+page('/projects', projectsController.index);
+page('/repos', reposController.index);
 page();

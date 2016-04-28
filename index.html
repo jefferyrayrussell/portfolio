@@ -48,10 +48,10 @@
       </section>
       <nav class="navigation-bar">
         <ul>
-          <li class="page-tab" data-content="home"><a href="/">Welcome!</a></li>
-          <li class="page-tab" data-content="about"><a href="/about">Resume</a></li>
-          <li class="page-tab" data-content="repos"><a href="/repos">GitHub</a></li>
+          <li class="page-tab" data-content="welcome"><a href="/">Welcome!</a></li>
+          <li class="page-tab" data-content="resume"><a href="/resume">Resume</a></li>
           <li class="page-tab" data-content="projects"><a href="/projects">Projects</a></li>
+          <li class="page-tab" data-content="repos"><a href="/repos">GitHub</a></li>
         </ul>
         <ul>
           <li class="sociallinks-tab"><a href="https://github.com/jefferyrayrussell" target="_blank" class="icon-github"></a></li>
@@ -61,45 +61,35 @@
         </ul>
       </nav>
     </header>
-
     <main>
 
       <section id="welcome" class="page-content">
-          <h1>Welcome!</h1>
-          <div id="welcome-photo">
-            <img src="images/welcome-photo.jpg">
-          </div>
-          <p> Welcome to my Professional Portfolio page! I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201. Code 101 is a one day "Introduction to Software Development and Careers in Tech", an intensive four week "Foundations of Software Development" providing a basic foundation in HTML, CSS, and JavaScript. I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures. The next course I plan on taking is Code 401, a ten week course "Advanced Software Development in Python". Thank you for visiting and being interested in my resume and portfolio. </p>
+        <h1>Welcome!</h1>
+        <img id="welcome-photo" src="images/welcome-photo.jpg">
+        <p> Welcome to my Professional Portfolio page! I am a student at Code Fellows on the Seattle Campus. I have completed Code 101 and Code 201. Code 101 is a one day "Introduction to Software Development and Careers in Tech", an intensive four week "Foundations of Software Development" providing a basic foundation in HTML, CSS, and JavaScript. I am currently in Code 301 which is also an intensive four week course "Intermediate Software Development" focused upon advanced frameworks and libraries, and work with basic algorithms and data structures. The next course I plan on taking is Code 401, a ten week course "Advanced Software Development in Python". Thank you for visiting and being interested in my resume and portfolio. </p>
       </section>
 
       <section id="resume" class="page-content">
-          <h1>Resume</h1>
-          <p>I love the work of web development.  As a former school board director and parish pastor I am thrilled to see how web development encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
-        </section>
-
-        <section id="projects" class="page-content">
-          <h1>Projects</h1>
-
-          <div class="style-filters">
-            <select id="title-filter">
-              <option value="">Filter by Title </option>
-            </select>
-          </div>
-
-        </section>
-
-
-        <section id="github" class="page-content">
-          <h1>GitHub Repositories</h1>
-
-          <ul class="github-repositories">
-            <li>Coding Projects Go Here</li>
-          </ul>
-
-        </section>
+        <h1>Resume</h1>
+        <p>I love the work of web development.  As a former school board director and parish pastor I am thrilled to see how web development encapsulates each of the four main 21st Century Skills: Critical Thinking, Communication, Collaboration, and Creativity.  I will soon be attaching my complete resume to this section.</p>
       </section>
 
+      <section id="projects" class="page-content">
+        <h1>Projects</h1>
+        <p>Here are some of my favorite projects that I would like to share with you. Please enjoy.</p>
+        <div class="style-filters">
+          <select id="title-filter">
+            <option value="">Filter by Title </option>
+          </select>
+        </div>
+      </section>
 
+      <section id="repos" class="page-content">
+        <h1>GitHub Repository</h1>
+        <div class="github-repositories">
+          <p>Here is a summary of the projects found in my GitHub repository.</p>
+        </div>
+      </section>
 
     </main>
     <footer>
@@ -118,10 +108,10 @@
     <script src="/scripts/view/portfolioView.js"></script>
     <script src="/scripts/view/repoView.js"></script>
 
-    <script src="/scripts/controller/homeController.js"></script>
-    <script src="/scripts/controller/projectController.js"></script>
-    <script src="/scripts/controller/aboutController.js"></script>
-
+    <script src="/scripts/controller/welcomeController.js"></script>
+    <script src="/scripts/controller/resumeController.js"></script>
+    <script src="/scripts/controller/projectsController.js"></script>
+    <script src="/scripts/controller/reposController.js"></script>
     <script src="/scripts/routes.js"></script>
     <script>
       //PortfolioItem.fetchAll(portfolioView.initializeIndex);

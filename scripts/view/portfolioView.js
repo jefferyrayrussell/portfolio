@@ -4,7 +4,7 @@
 
   portfolioView.populateTitleFilter = function() {
     $('article').each(function() {
-      if (!$(this).hasClass('portfolio-template')) {
+      if (!$(this).hasClass('project-template')) {
         var val = $(this).attr('data-title');
         var optionTag = '<option value="' + val + '">' + val + '</option>';
         if ($('#title-filter option[value="' + val + '"]').length === 0) {
