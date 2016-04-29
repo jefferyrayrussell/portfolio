@@ -1,25 +1,19 @@
 (function(module) {
   var repoView = {};
 
-  var ui = function () {
+  var p = function () {
     var $repos = $('#repos');
 
     $repos.find('p').empty();
     $repos.show().siblings().hide();
   };
 
-  var render;
-
-  var render = function(repo) {
-    var Template = Handlebars.compile($('.repo-template').text());
-    return Template(repo);
-  };
+  var render = Handlebars.compile($('.repo-template').text());
 
   repoView.index = function() {
-    ui();
-    $('#repos').append(
-      repos.with('name').map(render)
-    );
+    p();
+    $('#github-repositories').append(
+      repos.with('name').map(render));
   };
 
   module.repoView = repoView;

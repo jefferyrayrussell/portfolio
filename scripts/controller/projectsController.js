@@ -8,7 +8,7 @@
     $('#resume').hide();
     $('#repos').hide();
     $('#projects').show();
-    $('.style-filters'.show);
+    $('#title-filter'.show);
     PortfolioItem.fetchAll(portfolioView.initializeIndex);
   };
   module.projectsController = projectsController;

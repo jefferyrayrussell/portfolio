@@ -4,18 +4,13 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.ajax({
-      url:     'https://api.github.com/users/jefferyrayrussell/repos' +
-               '?per_page=4' +
-               '&sort=updated',
-      type:    'GET',
-      headers: {'Authorization': 'token ' + githubToken},
-      success: function(data) {
-        console.log(data);
+    $.get('/github/users/jefferyrayrussell/repos' +
+            '?per_page=5' +
+            '&sort=updated')
+      .done(function(data){
         repos.all = data;
-        callback(data);
-      }
-    });
+      })
+    .done(callback);
   };
 
   repos.with = function(attr) {
