@@ -7,7 +7,7 @@
     $('#resume').hide();
     $('#projects').hide();
     $('#repos').show();
-    // repos.requestRepos(repoView.index);
+    repos.requestRepos(repoView.index);
   };
   module.reposController = reposController;
 })(window);

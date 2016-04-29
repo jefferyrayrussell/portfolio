@@ -28,7 +28,6 @@
     $.getJSON('data/portfolioData.json', function(data){
       PortfolioItem.loadAll(data);
       localStorage.portfolioData = JSON.stringify(data);
-      //callBack();
     });
   };
 
