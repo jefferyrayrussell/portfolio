@@ -1,14 +1,14 @@
 (function(module) {
   var repos = {};
-
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.get('/github/users/jefferyrayrussell/repos' +
-            '?per_page=5' +
-            '&sort=updated')
+    $.get('https://api.github/users/jefferyrayrussell/repos' +
+          '?per_page=5' +
+          '&sort=updated')
       .done(function(data){
         repos.all = data;
+        console.log(data);
       })
     .done(callback);
   };

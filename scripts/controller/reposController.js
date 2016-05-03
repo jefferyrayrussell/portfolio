@@ -3,11 +3,11 @@
   var reposController = {};
 
   reposController.index = function() {
+    repos.requestRepos(repoView.index);
     $('#welcome').hide();
     $('#resume').hide();
     $('#projects').hide();
     $('#repos').show();
-    repos.requestRepos(repoView.index);
   };
   module.reposController = reposController;
 })(window);
