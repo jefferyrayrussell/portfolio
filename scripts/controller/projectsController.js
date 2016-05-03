@@ -1,15 +1,27 @@
 
-(function (module) {
+(function(module) {
   var projectsController = {};
 
   projectsController.index = function() {
-    $('#projects').empty();
+    PortfolioItem.fetchAll(portfolioView.initializeIndex);
     $('#welcome').hide();
     $('#resume').hide();
     $('#repos').hide();
     $('#projects').show();
-    $('.style-filters'.show);
-    PortfolioItem.fetchAll(portfolioView.initializeIndex);
+  };
+
+  projectsController.displayByCategory = function(ctx,next) {
+    $('#title-filter').on('change', function() {
+      if ($(this).val()) {
+
+        $('#projects article').hide();
+        $('article[data-title="' + $(this).val() + '"]').fadeIn();
+      } else {
+        $('article').fadeIn();
+        $('article.template').hide();
+      }
+    });
+    next();
   };
   module.projectsController = projectsController;
 })(window);

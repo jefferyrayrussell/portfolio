@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
-    <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="vendor/vendorstyles/fonts/icomoon/style.css">
 
     <script id="project-template" type="text/x-handlebars-template">
@@ -86,25 +85,19 @@
 
       <section id="repos" class="page-content">
         <h1>GitHub Repository</h1>
-        <div class="github-repositories">
-          <p>Here is a summary of the projects found in my GitHub repository.</p>
-        </div>
+        <p id="github-repositories">Repos Populate Here</p>
       </section>
 
     </main>
     <footer>
     </footer>
-    <script src="/vendor/vendorscripts/handlebars.js"></script>
-    <script src="/vendor/vendorscripts/jQuery.js"></script>
-    <script src="/vendor/vendorscripts/page.js"></script>
-    <script src="/vendor/vendorscripts/html5sql.js"></script>
-    <script src="/vendor/vendorscripts/webdb.js"></script>
 
-    <script src="/scripts/githubToken.js"></script>
+    <script src="/vendor/vendorscripts/jQuery.js"></script>
+    <script src="/vendor/vendorscripts/handlebars.js"></script>
+    <script src="/vendor/vendorscripts/page.js"></script>
 
     <script src="/scripts/model/portfolio.js"></script>
     <script src="/scripts/model/repo.js"></script>
-
     <script src="/scripts/view/portfolioView.js"></script>
     <script src="/scripts/view/repoView.js"></script>
 
@@ -113,8 +106,6 @@
     <script src="/scripts/controller/projectsController.js"></script>
     <script src="/scripts/controller/reposController.js"></script>
     <script src="/scripts/routes.js"></script>
-    <script>
-      // PortfolioItem.fetchAll(portfolioView.initializeIndex);
-    </script>
+  
   </body>
 </html>
